@@ -4,17 +4,11 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'hellodjango.views.home', name='home'),
-    # url(r'^hellodjango/', include('hellodjango.foo.urls')),
+urlpatterns = patterns('tivi.views',
+	url(r'^tivi/$', 'index'),
+	url(r'^tivi/(?P<show_id>\d+)/$', 'detail'),
+)
 
-    url(r'^tivi/$', 'tivi.views.index'),
-    url(r'^tivi/(?P<show_id>\d+)/$', 'tivi.views.detail'),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    url(r'^admin/', include(admin.site.urls)),
+urlpatterns += patterns('',
+    url(r'^admin/', include(admin.site.urls)),		
 )

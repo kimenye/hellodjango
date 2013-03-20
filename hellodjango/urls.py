@@ -9,6 +9,9 @@ urlpatterns = patterns('',
     # url(r'^$', 'hellodjango.views.home', name='home'),
     # url(r'^hellodjango/', include('hellodjango.foo.urls')),
 
+    url(r'^tivi/$', 'tivi.views.index'),
+    url(r'^tivi/(?P<show_id>\d+)/$', 'tivi.views.detail'),
+
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

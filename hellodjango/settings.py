@@ -65,7 +65,7 @@ MEDIA_ROOT = ''
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
-MEDIA_URL = ''
+MEDIA_URL = 'http://localhost:8000/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -120,6 +120,8 @@ WSGI_APPLICATION = 'hellodjango.wsgi.application'
 import os.path
 PROJECT_DIR = os.path.dirname(__file__)
 
+CKEDITOR_UPLOAD_PATH = os.path.join(PROJECT_DIR, "uploads")
+
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
@@ -141,6 +143,16 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
+    'atlas',
+    # 'django_geoip',
+    'category',
+    'publisher',
+    'secretballot',
+    'photologue',
+    'sites_groups',
+    'jmbo',
+    'post',
+    'ckeditor'
 )
 
 # A sample logging configuration. The only tangible logging
